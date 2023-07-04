@@ -1,9 +1,9 @@
 # Fundamentos-de-diseño
 #Pagina web
-´'
+''
 https://sites.google.com/d/1_vUqbzMBoi2xFPHb52BZ8wEoecrLaLLc/p/18aZfjOWRmWe7n3AJHOygmKYHwQvP2mHf/edit?authuser=1
 ''
-#Fuentes
+
 
 ¡Bienvenido a nuestro sitio web ! Estamos encantados de presentarle nuestra iniciativa y compartir con usted información sobre cómo está trabajando nuestro equipo. En este sitio web, encontrará detalles sobre nuestro equipo, visión, misión y una breve descripción de la problemática, así como información sobre las actividades que estamos llevando a cabo.
 
