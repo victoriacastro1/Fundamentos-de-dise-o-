@@ -1,0 +1,351 @@
+Delivered-To: maicol.diaz@upch.pe
+Received: by 2002:a05:6358:e486:b0:129:c2c0:32ff with SMTP id by6csp2823728rwb;
+        Fri, 16 Jun 2023 13:42:24 -0700 (PDT)
+X-Received: by 2002:a1f:6093:0:b0:471:5cb5:11fd with SMTP id u141-20020a1f6093000000b004715cb511fdmr331984vkb.8.1686948144565;
+        Fri, 16 Jun 2023 13:42:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686948144; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BWWtRoqaWT+mIk9i/K3Te1Te2NTobOeLmPfA1dR8nUoLYqKaCifJfZIVSypHhH7rSs
+         BB9UBOx1ydJEiFgBHFr+MYFJzlUQznsAD3IQ/HnOXANafWb53XD3DGduHVR20o5t59iC
+         UcpPjTNXKBFRZfpipKs6DnEQB4qRUck6eEKld2KLSiRCyksn2RMqePcduHaq7nVyib7P
+         mPcB+h9lBfJlv5cTWgbkDVPIOqBctDGOWinYT3ptLTSAJCASMmaSB46yeyIfbywLR38g
+         x9ZMnZUMrDsg5pVbM8s5v5j63JFG3A6y5cgSikEwEv0daNbbGmtEpmHTY1FAgFC5Hibx
+         J6Tg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=Zq5tL/i/pqhCSN/DUEXV8KHOaileRF+UzgxvDpL4wN4=;
+        b=DRq503oaWY/sALsjTP7MXDBoYJ3ThTaE/9thep+tJAlNfu3DdlB2QZbK0YGLg+oZZF
+         gWcJ7Pkmqdj5C3iK8swsQJSluI6QuYTAtmjtCxb5T8DSTIGWmsg/Xi8eVEXJVU6iRyo3
+         yuBdLHM4CkBLod3H/VMbfsLX4n6Zh2Db3n3EuHzSL0IxtvwKywadl4uzFHX28FYV1onL
+         QbOWGbpmNmrIMvjZ4vrw2WIAEWD6qPHz8UEg27H69IUcppTCDWUjniAJ0iQjNOpFMvHb
+         HZTV59wlG528HTk+X6bpUmChT485+JLOlhc+GNr6ubngA2MMiZWjlht0w25Oi3LwLkxh
+         hTBQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@upch-pe.20221208.gappssmtp.com header.s=20221208 header.b=kNxghbFp;
+       spf=pass (google.com: domain of juan.zuniga@upch.pe designates 209.85.220.41 as permitted sender) smtp.mailfrom=juan.zuniga@upch.pe
+Return-Path: <juan.zuniga@upch.pe>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id m5-20020a1f3f05000000b0047130c00ef0sor917104vka.8.2023.06.16.13.42.24
+        for <maicol.diaz@upch.pe>
+        (Google Transport Security);
+        Fri, 16 Jun 2023 13:42:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of juan.zuniga@upch.pe designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@upch-pe.20221208.gappssmtp.com header.s=20221208 header.b=kNxghbFp;
+       spf=pass (google.com: domain of juan.zuniga@upch.pe designates 209.85.220.41 as permitted sender) smtp.mailfrom=juan.zuniga@upch.pe
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=upch-pe.20221208.gappssmtp.com; s=20221208; t=1686948144; x=1689540144;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Zq5tL/i/pqhCSN/DUEXV8KHOaileRF+UzgxvDpL4wN4=;
+        b=kNxghbFpKrdcOtTXB49V7RzSlvpUCPQJ1IvmAfdbL2bv4W48EWHX7QDxMNv0E9F6qr
+         AqXnnktF/96jqowJ/jqnIDOEUbv4YO9frhawy6hN6Oopav0//jyTHbL5E76/3SN041hT
+         1XgiR+QHOJaJHsXGWu0HSRujX+mtpBdRF9LX1LHgfqON3VtfvTNFfLj64EYJek6dHi9+
+         +pOJqBVjK+73N8uBsATN7E74i+YG0ivt8Po+dNnW/c22J1AR0HHs0CFsP5ONIO6KCd/G
+         NR+hqcCmMa5RkXFzaW6B8OXoVBfp5GeZo3Zr1V/Oz6390RKZ41eKSDSNSVzJIRnsE8ej
+         dQFw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686948144; x=1689540144;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Zq5tL/i/pqhCSN/DUEXV8KHOaileRF+UzgxvDpL4wN4=;
+        b=cDK+4k8aQ8aqcrfD+IE+TXpCG1J+MxcJKeeaMSpimrzqjAzNRA9hO0RZSCVCjYrSA8
+         CA1zYj9tSZcCBhEwfk5VlThJRnmVLZdhnSdx6QkT/F2vSvDXDIn5knHTP8DqbTthr6zI
+         VFDmwaCmxDAxIx9uUOj00DvkgG+EZxFm4+l5DwtuSfA792Gqx2rwEFFO+OxNeTGrsMtW
+         TqOj8mN5Hj8xazQrLQK34jwmO5wHm1AsjqA9gb8uz1z+z5oDzsJ6JmrsfBkhRpYMK5Zz
+         HAMPKDtLn7h8+xF/WEYoFpyuwB1WfDSPKbVvNovvOcs1HBK53teC71cr0gPhO8ulmvFa
+         ON2g==
+X-Gm-Message-State: AC+VfDzdl9LcJsUle0ieKK6C7rn1UCfI8Z80XeEWbAfQYFggFVsWjBeM
+	joHX7lWbtD8YfpXoejJG/4bORAXnVC1mSwmy74neFMx9bYc2LCE6GlUzUzR7nxLI1XkonYudxGt
+	5YSXZyV+JrMe9mhiGoKTOO+dDwryoh0ZQiQ==
+X-Google-Smtp-Source: ACHHUZ6rV908JYJyDiZCQhhBHEKd5CPYftKp1Cbg6tAX4m86jF65oM9FXgkALD8QTB3BxemDikIuX/FWag7RmnF17NY=
+X-Received: by 2002:a1f:dd41:0:b0:456:da24:7be7 with SMTP id
+ u62-20020a1fdd41000000b00456da247be7mr233720vkg.16.1686948144064; Fri, 16 Jun
+ 2023 13:42:24 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAPNXvOsG5nWf2SCjBFjQQtB92CG2VhcqK5PrGG5WKX50Ze8Akg@mail.gmail.com>
+ <CACaib3-Brbiu_TQo+dNwSCaCHLdGX4-te9rbVh5o36cGRdJH2w@mail.gmail.com>
+ <CAPNXvOuFaQcm8eMJWSU4EETEgFkPM4z8TUKSWRjAwJ+gVqqALg@mail.gmail.com> <CACaib38Znwc5zan0D8QaxKTSHM1zJWcTAGhUjmTD+4OiyGF=qQ@mail.gmail.com>
+In-Reply-To: <CACaib38Znwc5zan0D8QaxKTSHM1zJWcTAGhUjmTD+4OiyGF=qQ@mail.gmail.com>
+From: =?UTF-8?Q?Juan_Manuel_Zu=C3=B1iga_Mamani?= <juan.zuniga@upch.pe>
+Date: Fri, 16 Jun 2023 15:42:13 -0500
+Message-ID: <CAPPDNwQzkqQ0+giFOxuwnN-Bobjk+hZvD=jc_Ck+wK6Ra+7RuA@mail.gmail.com>
+Subject: =?UTF-8?B?UmU6IENvcnRlIGzDoXNlciAtIEYuIGRpc2XDsW8gLSBncnVwbyA0?=
+To: =?UTF-8?Q?Laboratorios_de_Ingenier=C3=ADa_UPCH?= <laboratorios.ingenieria.upch@gmail.com>
+Cc: MAICOL DIAZ ZAMORA <maicol.diaz@upch.pe>
+Content-Type: multipart/alternative; boundary="000000000000e1c06005fe4538c7"
+
+--000000000000e1c06005fe4538c7
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Estimados
+
+Buenas tardes, de acuerdo.
+Un cordial saludo,
+Juan Manuel
+
+El jue, 15 jun 2023 a las 13:30, Laboratorios de Ingenier=C3=ADa UPCH (<
+laboratorios.ingenieria.upch@gmail.com>) escribi=C3=B3:
+
+> Buenas tardes profesor, se solicita su apoyo para la revisi=C3=B3n del
+> siguiente corte l=C3=A1ser.
+> Saludos cordiales.
+>
+> ---------- Forwarded message ---------
+> De: MAICOL DIAZ ZAMORA <maicol.diaz@upch.pe>
+> Date: jue, 15 jun 2023 a las 12:24
+> Subject: Re: Corte l=C3=A1ser - F. dise=C3=B1o - grupo 4
+> To: Laboratorios de Ingenier=C3=ADa UPCH <
+> laboratorios.ingenieria.upch@gmail.com>
+>
+>
+> Buenos d=C3=ADas, Ok.
+>
+> Este enlace es de la caja ya actualizada (con las medidas tomadas a los
+> componentes comprados), de la cual le env=C3=ADe los planos.
+>
+> https://cad.onshape.com/documents/55c5834670230313812c4947/w/ffc6a8631837=
+ed159052ec08/e/ed2b13bb12699b326f53aaf7?renderMode=3D0&uiState=3D648b45bc96=
+acf52d086574ad
+>
+> Este otro enlace es del prototipo ya con los componentes, pero en este a=
+=C3=B9n
+> no se ha agregado las modificaciones de la caja, ya que las medidas de lo=
+s
+> componentes que se importan al programa, difieren a los comprados; es por
+> ello que se procedi=C3=B3 a realizar otro prototipo con nuevas medidas pa=
+ra la
+> caja.
+>
+> https://cad.onshape.com/documents/55c5834670230313812c4947/w/ffc6a8631837=
+ed159052ec08/e/73c2fd05fbe7b371f4143beb?configuration=3Ddefault&renderMode=
+=3D0&uiState=3D648b46dd96acf52d08657db7
+>
+> Saludos cordiales.
+>
+>
+> El jue, 15 jun 2023 a las 11:57, Laboratorios de Ingenier=C3=ADa UPCH (<
+> laboratorios.ingenieria.upch@gmail.com>) escribi=C3=B3:
+>
+>> Buenos d=C3=ADas, enviar el link en Onshape para su revisi=C3=B3n.
+>>
+>> Saludos cordiales.
+>>
+>> El jue, 15 jun 2023 a las 0:24, MAICOL DIAZ ZAMORA (<maicol.diaz@upch.pe=
+>)
+>> escribi=C3=B3:
+>>
+>>> Buenos d=C3=ADas:
+>>>
+>>> Les saluda Maicol Diaz Zamora, estudiante de Ingenier=C3=ADa Ambiental.=
+ A
+>>> continuaci=C3=B3n les adjunto los archivos correspondientes para la rea=
+lizaci=C3=B3n
+>>> del corte l=C3=A1ser.
+>>> Material a usar: Acr=C3=ADlico
+>>> Versi=C3=B3n: Final
+>>> Funci=C3=B3n que cumplir=C3=A1: Caja para contenido de los componentes =
+a usar
+>>> (arduino, protoboard, m=C3=B3dulo Relay, bater=C3=ADa, etc)
+>>>
+>>> Saludos cordiales
+>>>
+>>> Atentamente,
+>>> Maicol Diaz Zamora
+>>>
+>>>
+>>> ------------------------------
+>>>
+>>> Este mensaje electr=C3=B3nico (e-mail) pertenece al remitente y puede
+>>> contener  informaci=C3=B3n confidencial legalmente protegida para uso d=
+el
+>>> destinatario. La divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o =
+distribuci=C3=B3n
+>>> para otro uso esta terminantemente prohibida. Gracias.
+>>> This e-mail message belongs to the sender and may include confidential
+>>> and legally privileged information, for the exclusive use of the named
+>>> recipient. Any disclosure, copying or distribution of this information =
+for
+>>> aims other than the intended purpose, is prohibited. Thank you.
+>>>
+>>>
+>>>
+> ------------------------------
+>
+> Este mensaje electr=C3=B3nico (e-mail) pertenece al remitente y puede con=
+tener
+>  informaci=C3=B3n confidencial legalmente protegida para uso del destinat=
+ario.
+> La divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o distribuci=C3=B3=
+n para otro uso
+> esta terminantemente prohibida. Gracias.
+> This e-mail message belongs to the sender and may include confidential an=
+d
+> legally privileged information, for the exclusive use of the named
+> recipient. Any disclosure, copying or distribution of this information fo=
+r
+> aims other than the intended purpose, is prohibited. Thank you.
+>
+>
+>
+
+--=20
+
+
+
+
+
+Este mensaje electr=C3=B3nico (e-mail) pertenece al remitente y puede=20
+contener =C2=A0informaci=C3=B3n confidencial legalmente protegida para uso =
+del=20
+destinatario. La divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o dist=
+ribuci=C3=B3n=20
+para otro uso esta terminantemente prohibida. Gracias.
+This e-mail message=20
+belongs to the sender and may include confidential and legally privileged=
+=20
+information, for the exclusive use of the named recipient. Any disclosure,=
+=20
+copying or distribution of this information for aims other than the=20
+intended purpose, is prohibited. Thank you.
+
+
+
+
+
+--000000000000e1c06005fe4538c7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Estimados=C2=A0<div><br></div><div>Buenas tardes, de acuer=
+do.</div><div>Un cordial saludo,</div><div>Juan Manuel</div></div><br><div =
+class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">El jue, 15 jun =
+2023 a las 13:30, Laboratorios de Ingenier=C3=ADa UPCH (&lt;<a href=3D"mail=
+to:laboratorios.ingenieria.upch@gmail.com">laboratorios.ingenieria.upch@gma=
+il.com</a>&gt;) escribi=C3=B3:<br></div><blockquote class=3D"gmail_quote" s=
+tyle=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);pad=
+ding-left:1ex"><div dir=3D"ltr">Buenas tardes profesor, se solicita su apoy=
+o para la revisi=C3=B3n del siguiente corte l=C3=A1ser.<div>Saludos cordial=
+es.<br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr"=
+>---------- Forwarded message ---------<br>De: <strong class=3D"gmail_sende=
+rname" dir=3D"auto">MAICOL DIAZ ZAMORA</strong> <span dir=3D"auto">&lt;<a h=
+ref=3D"mailto:maicol.diaz@upch.pe" target=3D"_blank">maicol.diaz@upch.pe</a=
+>&gt;</span><br>Date: jue, 15 jun 2023 a las 12:24<br>Subject: Re: Corte l=
+=C3=A1ser - F. dise=C3=B1o - grupo 4<br>To: Laboratorios de Ingenier=C3=ADa=
+ UPCH &lt;<a href=3D"mailto:laboratorios.ingenieria.upch@gmail.com" target=
+=3D"_blank">laboratorios.ingenieria.upch@gmail.com</a>&gt;<br></div><br><br=
+><div dir=3D"ltr">Buenos d=C3=ADas, Ok.<div><br></div><div>Este enlace es d=
+e la caja ya actualizada (con las medidas tomadas a los componentes comprad=
+os), de la cual le env=C3=ADe los planos.</div><div><a href=3D"https://cad.=
+onshape.com/documents/55c5834670230313812c4947/w/ffc6a8631837ed159052ec08/e=
+/ed2b13bb12699b326f53aaf7?renderMode=3D0&amp;uiState=3D648b45bc96acf52d0865=
+74ad" target=3D"_blank">https://cad.onshape.com/documents/55c58346702303138=
+12c4947/w/ffc6a8631837ed159052ec08/e/ed2b13bb12699b326f53aaf7?renderMode=3D=
+0&amp;uiState=3D648b45bc96acf52d086574ad</a><br></div><div><br></div><div>E=
+ste otro enlace es del prototipo ya con los componentes, pero en este a=C3=
+=B9n no se ha agregado las modificaciones de la caja, ya que las medidas de=
+ los componentes que se importan al programa, difieren a los comprados; es =
+por ello que se procedi=C3=B3 a realizar otro prototipo con nuevas medidas =
+para la caja.</div><div><a href=3D"https://cad.onshape.com/documents/55c583=
+4670230313812c4947/w/ffc6a8631837ed159052ec08/e/73c2fd05fbe7b371f4143beb?co=
+nfiguration=3Ddefault&amp;renderMode=3D0&amp;uiState=3D648b46dd96acf52d0865=
+7db7" target=3D"_blank">https://cad.onshape.com/documents/55c58346702303138=
+12c4947/w/ffc6a8631837ed159052ec08/e/73c2fd05fbe7b371f4143beb?configuration=
+=3Ddefault&amp;renderMode=3D0&amp;uiState=3D648b46dd96acf52d08657db7</a><br=
+></div><div><br></div><div>Saludos cordiales.</div><div><br></div></div><br=
+><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">El jue, 1=
+5 jun 2023 a las 11:57, Laboratorios de Ingenier=C3=ADa UPCH (&lt;<a href=
+=3D"mailto:laboratorios.ingenieria.upch@gmail.com" target=3D"_blank">labora=
+torios.ingenieria.upch@gmail.com</a>&gt;) escribi=C3=B3:<br></div><blockquo=
+te class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px =
+solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Buenos d=C3=ADas,=
+ enviar el link en Onshape para su revisi=C3=B3n.<div><br></div><div>Saludo=
+s cordiales.</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cla=
+ss=3D"gmail_attr">El jue, 15 jun 2023 a las 0:24, MAICOL DIAZ ZAMORA (&lt;<=
+a href=3D"mailto:maicol.diaz@upch.pe" target=3D"_blank">maicol.diaz@upch.pe=
+</a>&gt;) escribi=C3=B3:<br></div><blockquote class=3D"gmail_quote" style=
+=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding=
+-left:1ex"><div dir=3D"ltr">Buenos d=C3=ADas:<div><br><div>Les saluda Maico=
+l Diaz Zamora, estudiante de Ingenier=C3=ADa Ambiental. A continuaci=C3=B3n=
+ les adjunto los archivos correspondientes para la realizaci=C3=B3n del cor=
+te l=C3=A1ser.</div><div>Material a usar: Acr=C3=ADlico</div><div>Versi=C3=
+=B3n: Final</div><div>Funci=C3=B3n que cumplir=C3=A1: Caja para contenido d=
+e los componentes a usar (arduino, protoboard, m=C3=B3dulo Relay, bater=C3=
+=ADa, etc)</div><div><br></div><div>Saludos cordiales</div><div><br></div><=
+div>Atentamente,</div><div>Maicol Diaz Zamora</div><div></div><div><br></di=
+v></div></div>
+
+<br>
+<hr style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em">
+
+
+<p style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em"></p><sp=
+an style=3D"font-family:&quot;arial narrow&quot;,sans-serif;font-size:x-sma=
+ll;color:rgb(102,102,102);background-color:rgb(255,255,255)">Este mensaje e=
+lectr=C3=B3nico (e-mail) pertenece al remitente y puede contener =C2=A0info=
+rmaci=C3=B3n confidencial legalmente protegida para uso del destinatario. L=
+a divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o distribuci=C3=B3n p=
+ara otro uso esta terminantemente prohibida. Gracias.</span><br style=3D"co=
+lor:rgb(102,102,102);font-family:&quot;arial narrow&quot;,sans-serif;font-s=
+ize:x-small;background-color:rgb(255,255,255)"><span style=3D"font-family:&=
+quot;arial narrow&quot;,sans-serif;font-size:x-small;color:rgb(102,102,102)=
+;background-color:rgb(255,255,255)">This e-mail message belongs to the send=
+er and may include confidential and legally privileged information, for the=
+ exclusive use of the named recipient. Any disclosure, copying or distribut=
+ion of this information for aims other than the intended purpose, is prohib=
+ited. Thank you.</span><div><font color=3D"#666666" face=3D"arial narrow, s=
+ans-serif" size=3D"1"><br></font>
+<br>
+</div></blockquote></div>
+</blockquote></div>
+
+<br>
+<hr style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em">
+
+
+<p style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em"></p><sp=
+an style=3D"font-family:&quot;arial narrow&quot;,sans-serif;font-size:x-sma=
+ll;color:rgb(102,102,102);background-color:rgb(255,255,255)">Este mensaje e=
+lectr=C3=B3nico (e-mail) pertenece al remitente y puede contener =C2=A0info=
+rmaci=C3=B3n confidencial legalmente protegida para uso del destinatario. L=
+a divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o distribuci=C3=B3n p=
+ara otro uso esta terminantemente prohibida. Gracias.</span><br style=3D"co=
+lor:rgb(102,102,102);font-family:&quot;arial narrow&quot;,sans-serif;font-s=
+ize:x-small;background-color:rgb(255,255,255)"><span style=3D"font-family:&=
+quot;arial narrow&quot;,sans-serif;font-size:x-small;color:rgb(102,102,102)=
+;background-color:rgb(255,255,255)">This e-mail message belongs to the send=
+er and may include confidential and legally privileged information, for the=
+ exclusive use of the named recipient. Any disclosure, copying or distribut=
+ion of this information for aims other than the intended purpose, is prohib=
+ited. Thank you.</span><div><font color=3D"#666666" face=3D"arial narrow, s=
+ans-serif" size=3D"1"><br></font>
+<br>
+</div></div></div></div>
+</blockquote></div>
+
+<br>
+<hr style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em">
+
+
+<p style=3D"font-family:Arial,Helvetica,sans-serif;font-size:1.3em"></p><sp=
+an style=3D"font-family:&#39;arial narrow&#39;,sans-serif;font-size:x-small=
+;color:rgb(102,102,102);background-color:rgb(255,255,255)">Este mensaje ele=
+ctr=C3=B3nico (e-mail) pertenece al remitente y puede contener =C2=A0inform=
+aci=C3=B3n confidencial legalmente protegida para uso del destinatario. La =
+divulgaci=C3=B3n de esta informaci=C3=B3n, su copia o distribuci=C3=B3n par=
+a otro uso esta terminantemente prohibida. Gracias.</span><br style=3D"colo=
+r:rgb(102,102,102);font-family:&#39;arial narrow&#39;,sans-serif;font-size:=
+x-small;background-color:rgb(255,255,255)"><span style=3D"font-family:&#39;=
+arial narrow&#39;,sans-serif;font-size:x-small;color:rgb(102,102,102);backg=
+round-color:rgb(255,255,255)">This e-mail message belongs to the sender and=
+ may include confidential and legally privileged information, for the exclu=
+sive use of the named recipient. Any disclosure, copying or distribution of=
+ this information for aims other than the intended purpose, is prohibited. =
+Thank you.</span><div><font color=3D"#666666" face=3D"arial narrow, sans-se=
+rif" size=3D"1"><br></font>
+<br>
+</div>
+--000000000000e1c06005fe4538c7--
